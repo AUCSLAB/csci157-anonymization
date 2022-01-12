@@ -28,7 +28,7 @@ syntax.  You will also want to read the Python references provided below:
 
 ---
 
-## Background
+## Anonymization: bakcground
 
 Suppose you are working for Company X and your team is tasked with producing a 
 health record data set to be released to the participants in an upcoming 
@@ -70,8 +70,7 @@ techniques under the umbrella of differential privacy for exactly this purpose.
 By training a model to understand an originally sensitive, but anonymized, data 
 set we can generate synthetic data that looks statistically similar but further 
 protects the individuals contained within. To see more about this, you can read 
-[the blog post by Alexander Watson](https://gretel.ai/blog/using-generative-differentially-private-models-to-build-privacy-enhancing-synthetic-datasets-from-real-data)
-and follow along with the example notebook they provide to understand further.
+[the blog post by Alexander Watson](https://gretel.ai/blog/using-generative-differentially-private-models-to-build-privacy-enhancing-synthetic-datasets-from-real-data) and follow along with the example notebook they provide to understand further.
 ---
 
 ## Assignment desicription
