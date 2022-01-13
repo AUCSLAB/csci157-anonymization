@@ -21,7 +21,6 @@ syntax.  You will also want to read the Python references provided below:
   * [Python Data Structures](https://docs.python.org/3/tutorial/datastructures.html)
   * [Python Input Output and Files](https://docs.python.org/3/tutorial/inputoutput.html)
   * [Python Classes](https://docs.python.org/3/tutorial/classes.html)
-  * [Mutable HashMap](https://www.scala-lang.org/api/current/scala/collection/mutable/HashMap.html)
 * [Help Sheets](https://github.com/AUCSLAB/csci157-anonymization/tree/main/help)
   * [Basics, strings, functions, loops](https://github.com/AUCSLAB/csci157-anonymization/blob/main/help/Python%20help%20sheet%201.pdf)
   * [Lists, tuples, files, dictionaries, sets](https://github.com/AUCSLAB/csci157-anonymization/blob/main/help/Python%20help%20sheet%202.pdf)
