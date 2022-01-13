@@ -1,7 +1,7 @@
-# CSCI157 Anonymization
+# CSCI-157 Anonymization
 Reviewing basic Python while learning about data privacy and anonymization
 
-## Objectives
+### Objectives
 
 In this assignment, you will:
 * Review basic Python syntax and data structures, such as loops, functions, list, dictionaries and classes.
@@ -12,7 +12,7 @@ In this assignment, you will:
 * Apply a simple differential privacy technique.
 * Use Python dictionaries to compute statistics over a dataset.
 
-## Useful Resources
+### Useful Resources
 
 Review the lecture notes and provided example code for a review of Python 
 syntax.  You will also want to read the Python references provided below:
@@ -23,12 +23,10 @@ syntax.  You will also want to read the Python references provided below:
   * [Python Classes](https://docs.python.org/3/tutorial/classes.html)
   * [Mutable HashMap](https://www.scala-lang.org/api/current/scala/collection/mutable/HashMap.html)
 * [Help Sheets](https://github.com/AUCSLAB/csci157-anonymization/tree/main/help)
-  * [Basics, strings, functions, loops] (https://github.com/AUCSLAB/csci157-anonymization/blob/main/help/Python%20help%20sheet%201.pdf)
-  * [Lists, tuples, files, dictionaries, sets] (https://github.com/AUCSLAB/csci157-anonymization/blob/main/help/Python%20help%20sheet%202.pdf)
+  * [Basics, strings, functions, loops](https://github.com/AUCSLAB/csci157-anonymization/blob/main/help/Python%20help%20sheet%201.pdf)
+  * [Lists, tuples, files, dictionaries, sets](https://github.com/AUCSLAB/csci157-anonymization/blob/main/help/Python%20help%20sheet%202.pdf)
 
----
-
-## Anonymization: background
+## Background: Anonymization
 
 Suppose you are working for Company X and your team is tasked with producing a 
 health record data set to be released to the participants in an upcoming 
@@ -70,11 +68,58 @@ techniques under the umbrella of differential privacy for exactly this purpose.
 By training a model to understand an originally sensitive, but anonymized, data 
 set we can generate synthetic data that looks statistically similar but further 
 protects the individuals contained within. To see more about this, you can read 
-[the blog post by Alexander Watson] (https://gretel.ai/blog/using-generative-differentially-private-models-to-build-privacy-enhancing-synthetic-datasets-from-real-data) and follow along with the example notebook they provide to understand further.
----
+[the blog post by Alexander Watson] (https://gretel.ai/blog/using-generative-differentially-private-models-to-build-privacy-enhancing-synthetic-datasets-from-real-data) and follow along with the example notebook they provide to understand further. 
 
-## Assignment desicription
+## Assignments
 
-#### Homework 1
+You were assigned to process data of a survey among three age groups from three ZIP codes. The purpose of this survey was to find the answer to the following questions:
 
-##### Problem 1
+* What is the most popular food in each ZIP code among pizza, pasta, and burgers?
+* What is the most popular food for each age group among pizza, pasta, and burgers?
+
+Your task is to protect the anonymity of the responses while sharing the respondents' date of birth and ZIP codes. You will investigate two anonymization techniques:
+
+* Eliminating respondents' first and last names from the database (Homework 1).
+* Response randomization, a toy differential privacy technique (Homework 2).
+
+### Setup
+
+All files for both homework are present in the `/src` directory. The directory includes two artificial databases in the form of .csv files (names and DOB are generated via [Mockaroo](https://mockaroo.com)).
+* `voters.csv`: 
+  * Structure: First Name, Last Name, Birthday, Zipcode
+  * Description: an artificial "voters" database for zipcodes 91762, 91763, 91764 from three age groups: people born in 1960s, 1970s and 1980s.
+* `responses.csv`:
+  * Structure: First Name, Last Name, Birthday, Zipcode, Question 1, Question 2, Question 3
+  * Description: artificial "voters" responses to the following sensitive questions (0: No, 1: Yes):
+    * Do you like pizza?
+    * Do you like pasta?
+    * Do you like burgers?
+   
+  The answer are generated using `/src/tools/data_generator.py` script. You do not need to run this script to complete this assignment.
+
+### Homework 1
+
+In this homework, you will investigate a simple method for ensuring survey anonymity, such as eliminating respondents' first and last names from the database.
+
+
+#### Problem 1
+
+This step is our first attempt to anonymize the data from `src/responses.csv` by replacing the first and last names of respondents with "Person #1", "Person #2", "Person #3", etc. 
+
+Complete the method ```.run(..)``` in `src/simple_anonymizer_template.py` to store the nameless responses into the file `anonymous_responses.csv`. Follow the instructions given in the template.
+
+#### Problem 2
+
+In this step you will show the vulnerability of our simple anonymizer. Using the "publicly available" artificial voters' database `voters.csv`, you need to de-anonymize  `anonymous_responses.csv` by matching Date of Birth (DOB) and ZIP code fields of these databases.
+
+In `src\simple_deanonimyzer_template.py`, the constructor of the class ```SimpleDeanonymizer``` initializes ```self.voters_dictionary``` from the `voters.csv` by storing the tuple ```(dob, zipcode)``` as keys and the tuple ```(first_name, last_name)``` as values.
+
+Your task is to complete the method  ```.run(..)``` to match the DOB and ZIP codes from `anonymous_responses.csv` with ```self.voters_dictionary```, obtain the first and last names of each respondents and store the de-anonymized responses into the file `deanonymized_responses.csv`. Note that using a dictionary data structure for matching two datasets guarantees O(n) linear running time for the de-anonymization algorithm.
+
+One you are done with this task, you may compare the approximate correctness of your de-anonymization using `src\comparator_1.py' that compares the answers in the original file `src/responses.csv` with the answers in the de-anonymized file `deanonymized_responses.csv`.
+
+### Homework 2
+
+#### Problem 1
+
+#### Problem 2
