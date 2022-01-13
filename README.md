@@ -86,15 +86,15 @@ Your task is to protect the anonymity of the responses while sharing the respond
 All files for both homework are present in the `/src` directory. The directory includes two artificial databases in the form of .csv files (names and DOB are generated via [Mockaroo](https://mockaroo.com)).
 * `voters.csv`: 
   * Structure: First Name, Last Name, Birthday, Zipcode
-  * Description: an artificial "voters" database for zipcodes 91762, 91763, 91764 from three age groups: people born in 1960s, 1970s and 1980s.
+  * Description: artificial "voters" database for zipcodes 91762, 91763, 91764 from three age groups: people born in 1960s, 1970s and 1980s.
 * `responses.csv`:
   * Structure: First Name, Last Name, Birthday, Zipcode, Question 1, Question 2, Question 3
-  * Description: an artificial "voters" responses to the following sensitive questions (0: No, 1: Yes):
+  * Description: artificial "voters" "responses" to the following sensitive questions (0: No, 1: Yes):
     * Do you like pizza?
     * Do you like pasta?
     * Do you like burgers?
    
-  The answer are generated using `/src/tools/data_generator.py` script. You do not need to run this script to complete this assignment.
+  The answers were generated using `/src/tools/data_generator.py` script. You do not need to run this script to complete this assignment.
 
 ### Homework 1
 
