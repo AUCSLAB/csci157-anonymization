@@ -1,5 +1,5 @@
 # CSCI-157 Anonymization
-Reviewing basic Python while learning about data privacy and anonymization
+Reviewing basic Python while learning about data privacy and anonymization.
 
 ### Objectives
 
@@ -101,12 +101,13 @@ All files for both homework are present in the `/src` directory. The directory i
 
 In this homework, you will investigate a simple method for ensuring survey anonymity, such as eliminating respondents' first and last names from the database.
 
-
 #### Problem 1
 
 This step is our first attempt to anonymize the data from `src/responses.csv` by replacing the first and last names of respondents with "Person #1", "Person #2", "Person #3", etc. 
 
 Complete the method ```.run(..)``` in `src/simple_anonymizer_template.py` to store the nameless responses into the file `anonymous_responses.csv`. Follow the instructions given in the template.
+
+Rename `simple_anonymizer_template.py` to `simple_anonymizer.py` and submit it.  
 
 #### Problem 2
 
@@ -118,8 +119,57 @@ Your task is to complete the method  ```.run(..)``` to match the DOB and ZIP cod
 
 One you are done with this task, you may compare the approximate correctness of your de-anonymization using `src\comparator_1.py' that compares the answers in the original file `src/responses.csv` with the answers in the de-anonymized file `deanonymized_responses.csv`.
 
+Rename `simple_deanonimyzer_template.py` to `simple_deanonimyzer.py` and submit it.  
+
 ### Homework 2
+
+In this homework, you will investigate a simple alternative to the anonymization you did from Homework 1. Specifically, you will use (response randomization)[https://en.wikipedia.org/wiki/Differential_privacy#Randomized_response] - a toy differential privacy technique. 
 
 #### Problem 1
 
+In this step you will use a simple differential privacy algorithm for anonymization. Instead of replacing names of the respondents (as in Homework 1), for each of 3 questions, your program will:
+
+* Toss a coin (use an external/built-in library to randomly generate 0 or 1).
+* If it heads (1), store the truthful response.
+* If it tails (0), then toss the coin again and write its outcome (0 or 1).
+
+Complete the function ```randomized_response(truthfull_response)``` in `src\simple_randomizer_template.py` to generate the randomized responses.
+
+Similar to the previous homework, once your code is working, you may compare the original responses with the randomized responses using `src\comparator_2.py`.
+
+Rename `simple_randomizer_template.py` to `simple_randomizer.py` and submit it.  
+
 #### Problem 2
+
+Now is the time to produce the answer to the survey questions based on the responses. Specifically, you will compare the original file `src\responses.csv` and `randomized_responses.csv` and see if they produce similar results.
+
+In `src\statistics_template.py`, the method ```.read(responses_filename)``` of the class ```Statistics``` stores the survey responses into two dictionaries:
+
+* self.zipcodes with keys 91762, 91763, 91764
+* self.age_groups with keys 1960, 1970, 1980.
+
+Per each key, these dictionaries contain values of the dictionary format ```{'pizza': <int>, 'pasta': <int>, 'burgers': <int>}``` where the integer values are the counters of the "Yes" responses.
+
+Example: 
+```
+>>> s = Statistics()
+>>> s.read('responses.csv')
+>>> print(s.zipcodes)
+{91762: {'pizza': 10, 'pasta': 4, 'burgers': 25}, 91763: {'pizza': 33, 'pasta': 44, 'burgers': 15}, 91764: {'pizza': 4, 'pasta': 1, 'burgers': 2}
+```
+Your task is to complete methods ```.favorite_by_zipcode(self)``` and ```.favorite_by_agegroup(self)``` that find and print the most favorite food per each ZIP code and age group. Compare the results from the original survey and randomized survey and see if they match. 
+
+Rename `statistics_template.py` to `statistics.py` and submit it.
+
+### Collaboration policy
+
+You may work in groups for this homework. Make sure to specify group members in the comments of the code files you submit.
+
+## Revision History
+* Summer 2021 - Initial project draft developed as part of the [Mozilla Responsible Computer Science Challenge](https://foundation.mozilla.org/en/what-we-fund/awards/responsible-computer-science-challenge/) by:
+    * Joshua Caskie (jmcaskie@buffalo.edu)
+    * Alexander Fernandez (adfernan@buffalo.edu)
+    * Garegin Grigoryan (grigoryan@alfred.edu)
+    * Andrew Hughes (ahughes6@buffalo.edu)
+    * Macy McDonald (macymcdo@buffalo.edu)
+* Spring 2022 - Adapted for CSCI-157 by Garegin Grigoryan (grigoryan@alfred.edu)
