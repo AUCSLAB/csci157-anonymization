@@ -90,11 +90,11 @@ All files for both homework are present in the `/src` directory. The directory i
 * `responses.csv`:
   * Structure: First Name, Last Name, Birthday, Zipcode, Question 1, Question 2, Question 3
   * Description: artificial "voters" "responses" to the following sensitive questions (0: No, 1: Yes):
-    * Do you like pizza?
-    * Do you like pasta?
-    * Do you like burgers?
+    * Question 1: Do you like pizza?
+    * Question 2: Do you like pasta?
+    * Question 3: Do you like burgers?
    
-  The answers were generated using `/src/tools/data_generator.py` script. You do not need to run this script to complete any of assignments.
+  The responses were generated using `/src/tools/data_generator.py` script. You do not need to run this script to complete any of assignments.
 
 ### Homework 1
 
