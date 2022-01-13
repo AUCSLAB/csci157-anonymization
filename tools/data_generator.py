@@ -1,3 +1,12 @@
+'''
+Copyright 2022 Garegin Grigoryan (grigoryan@alfred.edu)
+
+This work is licensed under the Creative Commons
+Attribution-NonCommercial-ShareAlike 4.0 International License.
+To view a copy of this license, visit
+http://creativecommons.org/licenses/by-nc-sa/4.0/.
+'''
+import sys
 import random
 import numpy as np
 
@@ -35,7 +44,11 @@ def gen_answer(yob, zipcode):
 
             
 if __name__ == '__main__':
-    voters = open('voters.csv', 'r')
+    try:
+        voters = open('voters.csv', 'r')
+    except:
+        print('The file is missing')
+        sys.exit(1)
     data = voters.readlines()
     random.shuffle(data)
     health_data = open('responses.csv', 'w')
