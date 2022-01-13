@@ -1,5 +1,5 @@
 # CSCI-157 Anonymization
-Reviewing basic Python while learning about data privacy and anonymization.
+Reviewing Python while learning about data privacy and anonymization.
 
 ### Objectives
 
