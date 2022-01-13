@@ -89,7 +89,7 @@ All files for both homework are present in the `/src` directory. The directory i
   * Description: an artificial "voters" database for zipcodes 91762, 91763, 91764 from three age groups: people born in 1960s, 1970s and 1980s.
 * `responses.csv`:
   * Structure: First Name, Last Name, Birthday, Zipcode, Question 1, Question 2, Question 3
-  * Description: artificial "voters" responses to the following sensitive questions (0: No, 1: Yes):
+  * Description: an artificial "voters" responses to the following sensitive questions (0: No, 1: Yes):
     * Do you like pizza?
     * Do you like pasta?
     * Do you like burgers?
