@@ -1,5 +1,6 @@
 '''
-Copyright 2021 Garegin Grigoryan (grigoryan@alfred.edu)
+Copyright 2022 Garegin Grigoryan (grigoryan@alfred.edu)
+
 This work is licensed under the Creative Commons
 Attribution-NonCommercial-ShareAlike 4.0 International License.
 To view a copy of this license, visit
