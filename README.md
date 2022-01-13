@@ -94,7 +94,7 @@ All files for both homework are present in the `/src` directory. The directory i
     * Do you like pasta?
     * Do you like burgers?
    
-  The answers were generated using `/src/tools/data_generator.py` script. You do not need to run this script to complete this assignment.
+  The answers were generated using `/src/tools/data_generator.py` script. You do not need to run this script to complete any of assignments.
 
 ### Homework 1
 
