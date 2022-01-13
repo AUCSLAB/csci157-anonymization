@@ -112,7 +112,7 @@ Rename `simple_anonymizer_template.py` to `simple_anonymizer.py` and submit it.
 
 In this step you will show the vulnerability of our simple anonymizer. Using the "publicly available" artificial voters' database `voters.csv`, you need to de-anonymize  `anonymous_responses.csv` by matching Date of Birth (DOB) and ZIP code fields of these databases.
 
-In `src\simple_deanonimyzer_template.py`, the constructor of the class ```SimpleDeanonymizer``` initializes ```self.voters_dictionary``` from the `voters.csv` by storing the tuple ```(dob, zipcode)``` as keys and the tuple ```(first_name, last_name)``` as values.
+In `src/simple_deanonimyzer_template.py`, the constructor of the class ```SimpleDeanonymizer``` initializes ```self.voters_dictionary``` from the `voters.csv` by storing the tuple ```(dob, zipcode)``` as keys and the tuple ```(first_name, last_name)``` as values.
 
 Your task is to complete the method  ```.run(..)``` to match the DOB and ZIP codes from `anonymous_responses.csv` with ```self.voters_dictionary```, obtain the first and last names of each respondents and store the de-anonymized responses into the file `deanonymized_responses.csv`. Note that using a dictionary data structure for matching two datasets guarantees O(n) linear running time for the de-anonymization algorithm.
 
@@ -132,17 +132,17 @@ In this step you will use a simple differential privacy algorithm for anonymizat
 * If it heads (1), store the truthful response.
 * If it tails (0), then toss the coin again and write its outcome (0 or 1).
 
-Complete the function ```randomized_response(truthfull_response)``` in `src\simple_randomizer_template.py` to generate the randomized responses.
+Complete the function ```randomized_response(truthfull_response)``` in `src/simple_randomizer_template.py` to generate the randomized responses.
 
-Similar to the previous homework, once your code is working, you may compare the original responses with the randomized responses using `src\comparator_2.py`.
+Similar to the previous homework, once your code is working, you may compare the original responses with the randomized responses using `src/comparator_2.py`.
 
 Rename `simple_randomizer_template.py` to `simple_randomizer.py` and submit it.  
 
 #### Problem 2
 
-Now is the time to produce the answer to the survey questions based on the responses. Specifically, you will compare the original file `src\responses.csv` and `randomized_responses.csv` and see if they produce similar results.
+Now is the time to produce the answer to the survey questions based on the responses. Specifically, you will compare the original file `src/responses.csv` and `randomized_responses.csv` and see if they produce similar results.
 
-In `src\statistics_template.py`, the method ```.read(responses_filename)``` of the class ```Statistics``` stores the survey responses into two dictionaries:
+In `src/statistics_template.py`, the method ```.read(responses_filename)``` of the class ```Statistics``` stores the survey responses into two dictionaries:
 
 * self.zipcodes with keys 91762, 91763, 91764
 * self.age_groups with keys 1960, 1970, 1980.
