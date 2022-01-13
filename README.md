@@ -112,17 +112,17 @@ Rename `simple_anonymizer_template.py` to `simple_anonymizer.py` and submit it.
 
 In this step you will show the vulnerability of our simple anonymizer. Using the "publicly available" artificial voters' database `voters.csv`, you need to de-anonymize  `anonymous_responses.csv` by matching Date of Birth (DOB) and ZIP code fields of these databases.
 
-In `src/simple_deanonimyzer_template.py`, the constructor of the class ```SimpleDeanonymizer``` initializes ```self.voters_dictionary``` from the `voters.csv` by storing the tuple ```(dob, zipcode)``` as keys and the tuple ```(first_name, last_name)``` as values.
+In `src/simple_deanonimyzer_template.py`, the constructor of the class ```SimpleDeanonymizer``` initializes ```self.voters_dictionary``` from `voters.csv` by storing the tuple ```(dob, zipcode)``` as keys and the tuple ```(first_name, last_name)``` as values.
 
-Your task is to complete the method  ```.run(..)``` to match the DOB and ZIP codes from `anonymous_responses.csv` with ```self.voters_dictionary```, obtain the first and last names of each respondents and store the de-anonymized responses into the file `deanonymized_responses.csv`. Note that using a dictionary data structure for matching two datasets guarantees O(n) linear running time for the de-anonymization algorithm.
+Your task is to complete the method  ```.run(..)``` to match the DOB and ZIP codes from `anonymous_responses.csv` with ```self.voters_dictionary```, obtain the first and last names of each respondents and store the de-anonymized responses into the file `deanonymized_responses.csv`. Note that using a dictionary data structure for matching two datasets guarantees O(|responses|) linear running time for the de-anonymization algorithm.
 
-One you are done with this task, you may compare the approximate correctness of your de-anonymization using `src\comparator_1.py' that compares the answers in the original file `src/responses.csv` with the answers in the de-anonymized file `deanonymized_responses.csv`.
+Once you are done with this task, you may compare the approximate correctness of your de-anonymization using `src\comparator_1.py` that compares the answers in the original file `src/responses.csv` with the answers in the de-anonymized file `deanonymized_responses.csv`.
 
 Rename `simple_deanonimyzer_template.py` to `simple_deanonimyzer.py` and submit it.  
 
 ### Homework 2
 
-In this homework, you will investigate a simple alternative to the anonymization you did from Homework 1. Specifically, you will use (response randomization)[https://en.wikipedia.org/wiki/Differential_privacy#Randomized_response] - a toy differential privacy technique. 
+In this homework, you will investigate a simple alternative to the anonymization you did from Homework 1. Specifically, you will use [response randomization][https://en.wikipedia.org/wiki/Differential_privacy#Randomized_response] - a toy differential privacy technique. 
 
 #### Problem 1
 
@@ -162,7 +162,7 @@ Rename `statistics_template.py` to `statistics.py` and submit it.
 
 ### Collaboration policy
 
-You may work in groups for this homework. Make sure to specify group members in the comments of the code files you submit.
+You may work in groups for these homework. Make sure to specify group members in the comments of the code files you submit.
 
 ## Revision History
 * Summer 2021 - Initial project draft developed as part of the [Mozilla Responsible Computer Science Challenge](https://foundation.mozilla.org/en/what-we-fund/awards/responsible-computer-science-challenge/) by:
