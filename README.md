@@ -122,7 +122,7 @@ Rename `simple_deanonimyzer_template.py` to `simple_deanonimyzer.py` and submit 
 
 ### Homework 2
 
-In this homework, you will investigate a simple alternative to the anonymization you did from Homework 1. Specifically, you will use [response randomization](https://en.wikipedia.org/wiki/Differential_privacy#Randomized_response) - a toy differential privacy technique. 
+In this homework, you will investigate a simple alternative to the anonymization you did in Homework 1. Specifically, you will use [response randomization](https://en.wikipedia.org/wiki/Differential_privacy#Randomized_response) - a toy differential privacy technique. 
 
 #### Problem 1
 
