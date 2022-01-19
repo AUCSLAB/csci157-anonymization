@@ -158,7 +158,7 @@ Example: 
 >>> print(s.zipcodes)
 {91762: {'pizza': 10, 'pasta': 4, 'burgers': 25}, 91763: {'pizza': 33, 'pasta': 44, 'burgers': 15}, 91764: {'pizza': 4, 'pasta': 1, 'burgers': 2}
 ```
-Your task is to complete methods ```.favorite_by_zipcode(self)``` and ```.favorite_by_agegroup(self)``` that find and print that find and print the percent of "Yes" answers per each ZIP code and age group. Compare the results from the original survey and randomized survey and if answers to the questions of the survey (see above) match.
+Your task is to complete methods ```.favorite_by_zipcode(self)``` and ```.favorite_by_agegroup(self)``` that find and print the percent of "Yes" answers per each ZIP code and age group. Compare the results from the original survey and randomized survey and if answers to the questions of the survey (see above) match.
 
 Rename `statistics_template.py` to `statistics.py` and submit it.
 
