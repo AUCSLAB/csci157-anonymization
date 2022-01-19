@@ -132,6 +132,8 @@ In this step you will use a simple differential privacy algorithm for anonymizat
 * If it heads (1), store the truthful response.
 * If it tails (0), then toss the coin again and write its outcome (0 or 1).
 
+Assume the `p` is the fraction of people who answered "Yes" on the original survey. After the such a randomization, we expect `p/2 + 1/4` fraction of people with "Yes" answers. Thus, it is possible to estimate the opinion of the majority (check what happens if `p` is equal 0.20, 0,40, 0.50, 0.80). At the same time, individual responses will be provided with refutability and hence confidentiality.
+
 Complete the function ```randomized_response(truthfull_response)``` in `src/simple_randomizer_template.py` to generate the randomized responses.
 
 Similar to the previous homework, once your code is working, you may compare the original responses with the randomized responses using `src/comparator_2.py`.
