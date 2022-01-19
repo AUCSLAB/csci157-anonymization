@@ -73,8 +73,8 @@ protects the individuals contained within. To see more about this, you can read
 
 You were assigned to process data of a survey among three age groups from three ZIP codes. The purpose of this survey was to find the answer to the following questions:
 
-* What is the most popular food in each ZIP code among pizza, pasta, and burgers?
-* What is the most popular food for each age group among pizza, pasta, and burgers?
+* Does the majority of people in each ZIP code like pizza, pasta, or burgers?
+* Does the majority of people in each age group like pizza, spaghetti, or burgers?
 
 Your task is to protect the anonymity of the responses while sharing the respondents' date of birth and ZIP codes. You will investigate two anonymization techniques:
 
@@ -156,7 +156,7 @@ Example: 
 >>> print(s.zipcodes)
 {91762: {'pizza': 10, 'pasta': 4, 'burgers': 25}, 91763: {'pizza': 33, 'pasta': 44, 'burgers': 15}, 91764: {'pizza': 4, 'pasta': 1, 'burgers': 2}
 ```
-Your task is to complete methods ```.favorite_by_zipcode(self)``` and ```.favorite_by_agegroup(self)``` that find and print the most favorite food per each ZIP code and age group. Compare the results from the original survey and randomized survey and see if they match. 
+Your task is to complete methods ```.favorite_by_zipcode(self)``` and ```.favorite_by_agegroup(self)``` that find and print the most favorite food per each ZIP code and age group. Compare the results from the original survey and randomized survey and if answers to the questions of the survey (see above) match.
 
 Rename `statistics_template.py` to `statistics.py` and submit it.
 
