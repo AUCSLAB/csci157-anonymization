@@ -142,7 +142,7 @@ Rename `simple_randomizer_template.py` to `simple_randomizer.py` and submit it.
 
 #### Problem 2
 
-Now is the time to produce the answer to the survey questions based on the responses. Specifically, you will compare the original file `src/responses.csv` and `randomized_responses.csv` and see if they produce similar results.
+Now is the time to analyze the answers to the survey questions based on the responses. Specifically, you will compare the original file `src/responses.csv` and `randomized_responses.csv` and see if they produce similar results.
 
 In `src/statistics_template.py`, the method ```.read(responses_filename)``` of the class ```Statistics``` stores the survey responses into two dictionaries:
 
@@ -160,7 +160,24 @@ Example: 
 ```
 Your task is to complete methods ```.favorite_by_zipcode(self)``` and ```.favorite_by_agegroup(self)``` that find and print the percent of "Yes" answers per each ZIP code and age group. Compare the results from the original survey and randomized survey and if answers to the questions of the survey (see above) match.
 
+Note that it is possible that they do not fully match, as randomization decreases the fraction of "Yes" answers if they are greater than 50%, and increases that fraction if the original fraction of "Yes" answers is less than 50%.
+
 Rename `statistics_template.py` to `statistics.py` and submit it.
+
+#### Bonus problem
+
+Write two methods in the class Statistics that will answer the main question of the survey.
+
+* `.majority_opinion_by_zipcode(self)`: Does the majority of people in each ZIP code like pizza, pasta, or/and burgers?
+* `.majority_opinion_by_agegroup(self)`: Does the majority of people in each age group like pizza, pasta, or/and burgers?
+
+You may want to modify other methods of the class Statistics and/or function add_data, since you need to calculate the total number of respondents by each ZIP code and age group.
+
+Make sure your modification does not "break" the solution of the Problem 2.
+
+Similarly to the Problem 2, print and compare the results of the original and randomized survey.
+
+Submit the modified `statistics.py`.
 
 ### Collaboration policy
 
